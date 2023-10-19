@@ -48,7 +48,7 @@ The purpose of this Terraform module is to create AWS managed Prometheus resourc
 ```
 module "prometheus-workspace" {
   source = "git::https://github.com/UKHomeOffice/acp-aws-prometheus-tf?ref=v1"
-  workspace_alias = "example"
+  workspace_name = "myawesome_workspace"
 
   alert_manager_definition = <<-EOT
   alertmanager_config: |
