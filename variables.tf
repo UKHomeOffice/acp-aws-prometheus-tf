@@ -1,3 +1,8 @@
+variable "aws_region" {
+  description = "AWS Region"
+  type        = string
+}
+
 variable "create_workspace" {
   description = "Determines whether a workspace will be created or to use an existing workspace"
   type        = bool
@@ -44,4 +49,27 @@ variable "rule_group_namespaces" {
   description = "A map of one or more rule group namespace definitions"
   type        = map(any)
   default     = {}
+}
+
+# variable "managed_prometheus_workspace_ids" {
+#   description = "The Prometheus Workspace ID to create Alarms for"
+#   type        = string
+# }
+
+variable "active_series_threshold" {
+  description = "Threshold for active series metric alarm"
+  type        = number
+  default     = 1000000
+}
+
+variable "ingestion_rate_threshold" {
+  description = "Threshold for ingestion rate metric alarm"
+  type        = number
+  default     = 70000
+}
+
+variable "dashboards_folder_id" {
+  description = "Grafana folder ID for automatic dashboards"
+  default     = "0"
+  type        = string
 }
