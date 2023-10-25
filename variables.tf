@@ -10,15 +10,15 @@ variable "workspace_id" {
   default     = ""
 }
 
-variable "workspace_name" {
-  description = "Name (Alias) of the Prometheus workspace, should be unique (for readability not enforced) in the account"
+variable "workspace_alias" {
+  description = "Alias (Name) of the Prometheus workspace, should be unique (for readability not enforced) in the account"
   type        = string
   default     = ""
 }
 
 variable "tags" {
   description = "A map of tags to add to the resources"
-  type = map(string)
+  type        = map(string)
   default     = {}
 }
 
