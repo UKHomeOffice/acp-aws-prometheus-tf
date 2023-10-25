@@ -1,5 +1,5 @@
 locals {
-  workspace_id = var.create_workspace ? aws_prometheus_workspace.this.id : var.workspace_id
+  workspace_id = var.create_workspace ? aws_prometheus_workspace.this[0].id : var.workspace_id
 }
 
 resource "aws_prometheus_workspace" "this" {
