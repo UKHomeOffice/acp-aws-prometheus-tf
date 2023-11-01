@@ -32,7 +32,7 @@ The purpose of this Terraform module is to create AWS managed Prometheus resourc
 | <a name="input_logging_configuration"></a> [logging\_configuration](#input\_logging\_configuration) | The logging configuration of the prometheus workspace. | `map(string)` | `{}` | no |
 | <a name="input_rule_group_namespaces"></a> [rule\_group\_namespaces](#input\_rule\_group\_namespaces) | A map of one or more rule group namespace definitions | `map(any)` | `{}` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
-| <a name="input_workspace_name"></a> [workspace\_name](#input\_workspace\_name) | The alias of the prometheus workspace. See more in the [AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-create-workspace.html) | `string` | `null` | no |
+| <a name="input_workspace_alias"></a> [workspace\_alias](#input\_workspace\_alias) | The alias of the prometheus workspace. See more in the [AWS Docs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-create-workspace.html) | `string` | `null` | no |
 | <a name="input_workspace_id"></a> [workspace\_id](#input\_workspace\_id) | The ID of an existing workspace to use when `create_workspace` is `false` | `string` | `""` | no |
 
 ## Outputs
@@ -48,7 +48,7 @@ The purpose of this Terraform module is to create AWS managed Prometheus resourc
 ```
 module "prometheus-workspace" {
   source = "git::https://github.com/UKHomeOffice/acp-aws-prometheus-tf?ref=v1"
-  workspace_name = "myawesome_workspace"
+  workspace_alias = "myawesome_workspace"
 
   alert_manager_definition = <<-EOT
   alertmanager_config: |
